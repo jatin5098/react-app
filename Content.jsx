@@ -5,6 +5,8 @@ class Content extends React.Component {
         return (
             <div>
                 <h2>Content</h2>
+                <h4>{this.props.headerProp}</h4>
+                <h4>{this.props.contentProp}</h4>
             </div>    
         );
     }
