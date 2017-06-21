@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header.jsx';
 import Content from './Content.jsx';
 import StateComponent from './StateComponent.jsx';
+import StateChangeComponent from './StateChangeComponent.jsx';
+import FormComponent from './FormComponent.jsx';
 
 class App extends React.Component {
    constructor() {
@@ -25,7 +27,9 @@ class App extends React.Component {
                 contentProp = {this.state.content}/>
             <StateComponent 
                 headerProp = "Header from props..."
-                contentProp = "Content from props..."/>           
+                contentProp = "Content from props..."/>
+            <StateChangeComponent />
+            <FormComponent />         
             <p style= {myStyle}>This is the content!!!</p>
             <p data-myattribute = "somevalue">This is the content!!!</p>
             <h4>{2+2}</h4>
