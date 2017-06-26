@@ -6,6 +6,7 @@ import Home from './router/Home.jsx';
 import About from './router/About.jsx';
 import Contact from './router/Contact.jsx';
 import App from './App.jsx';
+import ReduxComponent from './redux/components/redux.jsx';
 
 
 // ReactDOM.render(<App />, document.getElementById('app'));
@@ -19,6 +20,7 @@ ReactDOM.render((
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/contact/:id" component={Contact} />
+            <Route exact path="/redux" component={ReduxComponent} />
         </div>
    </HashRouter >	
 ), document.getElementById('app'));
