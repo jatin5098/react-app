@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 const appState = {
     state: 'Initial State',
     res: 1
@@ -43,10 +43,11 @@ const mathReducer = (state = appState, action) => {
     }
     return state;
 };
-const store = createStore(combineReducers({
-    userReducer,
-    mathReducer
-}));
+const myLogger = (store) => (next) => (action) => {
+    console.log('Logged Action: ' , action);
+    next(action);
+};
+const store = createStore(combineReducers({userReducer, mathReducer}), {}, applyMiddleware(myLogger));
 
 store.subscribe(() => {
     console.log(store.getState());
