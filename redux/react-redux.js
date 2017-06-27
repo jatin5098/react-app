@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+import ReduxComponent from './components/Redux.jsx';
+
 const appState = {
     state: 'Initial State',
     res: 1
@@ -57,27 +59,7 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 
-store.dispatch({
-    type: 'ADD',
-    payload: 10
-});
-
-store.dispatch({
-    type: 'ADD',
-    payload: 10
-});
-
-store.dispatch({
-    type: 'SUBSTRACT',
-    payload: 10
-});
-
-store.dispatch({
-    type: 'SET_USER',
-    payload: 'A new user'
-});
-
-store.dispatch({
-    type: 'SET_AGE',
-    payload: 30
-});
+ReactDOM.render(
+    <Provider store = {store}>
+        <ReduxComponent />
+    </Provider>, document.getElementById('app'));
