@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setUser, setAge } from '../actions/mathActions';
+import { setUser, setAge } from '../actions/userActions';
 
 class ReduxComponent extends React.Component {
     constructor() {
