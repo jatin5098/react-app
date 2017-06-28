@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { setUser, setAge } from '../actions/mathActions';
 
 class ReduxComponent extends React.Component {
     constructor() {
@@ -29,16 +30,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProp = (dispatch) => {
     return {
         setName: () => {
-            dispatch({
-                 type: 'SET_USER',
-                 payload: 'A new redux user'                
-            });
+            dispatch(setUser());
         },
         setAge: (age) => {
-            dispatch({
-                 type: 'SET_AGE',
-                 payload: age                
-            });
+            dispatch(setAge(age));
         }
     };
 }
