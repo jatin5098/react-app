@@ -1,5 +1,5 @@
 var config = {
-   entry: './redux/react-redux.js',
+   entry: './redux/sample-redux-app/index.js',
 	
    output: {
       path: __dirname,
