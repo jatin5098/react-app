@@ -12,11 +12,11 @@ const displayList = (props) => {
             Display List
             <div>
                 <ul>
-                    {props.lists.map((list) => {
-                        <Lists 
-                            topic = {list.topic}
-                            duration = {list.duration} />;
-                    })}
+                    {props.lists.map((list, index) => 
+                        <li key = {index}>
+                            {list.topic}
+                        </li>)
+                    }
                 </ul>                
             </div>
         </div>
