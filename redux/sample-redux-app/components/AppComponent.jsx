@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import DisplayList from './DisplayList.jsx';
 
 import appReducer from '../reducers/appReducer.js';
+import { addList } from '../actions/listActions'
 
 class AppComponent extends React.Component {
     constructor() {
@@ -29,13 +30,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProp = (dispatch) => {
     return {
         addNew: () => {
-            dispatch({
-                type: 'ADD_NEW',
-                payload: {
-                    topic: 'new topic',
-                    duration: '44'
-                 }
-            });
+            dispatch(addList());
         }
     }
 };
