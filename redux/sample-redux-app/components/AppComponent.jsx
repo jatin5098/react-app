@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import DisplayList from './DisplayList.jsx';
 
 import appReducer from '../reducers/appReducer.js';
-import { addList } from '../actions/listActions'
+import { addList } from '../actions/listActions';
+
+import request from 'superagent';
 
 class AppComponent extends React.Component {
     constructor() {
@@ -31,6 +33,13 @@ const mapDispatchToProp = (dispatch) => {
     return {
         addNew: () => {
             dispatch(addList());
+            //Do some async operation
+            request.get("http://date.jsontest.com")
+                .end((err, res) => {
+                    console.log(res.text);                       
+                    dispatch(addList());
+                });
+            
         }
     }
 };

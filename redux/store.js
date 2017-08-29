@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import userReducer from './reducers/userReducer';
 import mathReducer from './reducers/mathReducer';
-import thunk from 'redux-thunk';
+// import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 
 const myLogger = (store) => (next) => (action) => {
